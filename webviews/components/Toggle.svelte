@@ -3,9 +3,11 @@
     export let option2 : string;
 </script>
 
-<div class="">
+<div class="toggle">
     <p>
         {option1}
+    </p>
+    <p>
     </p>
     <p>
         {option2}
@@ -13,4 +15,11 @@
 </div>
 
 <style>
+    .toggle {
+        height: 30px;
+        width: 60px;
+        display: flex;
+        border-radius: 6px;
+        border: 2px solid lightblue;
+    }
 </style>

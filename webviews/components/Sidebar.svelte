@@ -1,6 +1,24 @@
 <script lang="ts">
-import Toggle from "./Toggle.svelte";
+    let isLookAwayActive = true;
+    let isStandUpActive = true;
 
+    function notifyLookAway() {
+        // todo add vs code notification call and change this if
+        if ("cenas") {
+            console.log("Look away");
+            setTimeout(notifyLookAway, 5000);
+        }
+    }
+
+    function notifyStandUp() {
+        // todo add a variable that know when to show the notification
+        if ("cenas") {
+            setTimeout(notifyStandUp, 5000);
+        }
+    }
+
+    notifyLookAway();
+    notifyStandUp();
 </script>
 
 <h1>Helth</h1>
@@ -9,17 +27,37 @@ import Toggle from "./Toggle.svelte";
     remind you to stand up using your standing desk.
 </p>
 
-<h3>
-    20/20/20
-</h3>
+<h3>20/20/20</h3>
 
-<Toggle option1="Sound" option2="Notification"></Toggle>
+{#if isLookAwayActive}
+    <p class="green">Active</p>
+{:else}
+    <p class="red">Inactive</p>
+{/if}
 
-<h3>
-    Standing Reminder
-</h3>
+<button
+    on:click={() => {
+        isLookAwayActive = !isLookAwayActive;
+    }}
+>
+    Toggle 20/20/20 Reminder
+</button>
 
-<Toggle option1="Sound" option2="Notification"></Toggle>
+<h3>Standing Reminder</h3>
+
+{#if isStandUpActive}
+    <p class="green">Active</p>
+{:else}
+    <p class="red">Inactive</p>
+{/if}
+
+<button
+    on:click={() => {
+        isStandUpActive = !isStandUpActive;
+    }}
+>
+    Toggle Stand Up Reminder
+</button>
 
 <p>
     This is not a substitute for a healthy lifestyle, but it is a reminder to
@@ -35,5 +73,13 @@ import Toggle from "./Toggle.svelte";
 <style>
     h1 {
         color: yellow;
+    }
+
+    .green {
+        color: green;
+    }
+
+    .red {
+        color: red;
     }
 </style>
