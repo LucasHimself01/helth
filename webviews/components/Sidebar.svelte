@@ -62,10 +62,14 @@
     Toggle Stand Up Reminder
 </button>
 
+<br />
+
 <p>
     This is not a substitute for a healthy lifestyle, but it is a reminder to
     keep your eyes and your body healthy.
 </p>
+
+<br />
 
 <p>
     The 20/20/20 rule means that, in order for you to maintain your eyes' helth,
