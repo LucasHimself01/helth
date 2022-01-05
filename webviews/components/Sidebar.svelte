@@ -3,22 +3,25 @@
     let isStandUpActive = true;
 
     function notifyLookAway() {
-        // todo add vs code notification call and change this if
-        if ("cenas") {
-            console.log("Look away");
-            setTimeout(notifyLookAway, 5000);
+        if (isLookAwayActive) {
+            tsvscode.postMessage({
+                command: "alertLookAway",
+            });
         }
+        setTimeout(notifyLookAway, 1200000);
     }
 
     function notifyStandUp() {
-        // todo add a variable that know when to show the notification
-        if ("cenas") {
-            setTimeout(notifyStandUp, 5000);
+        if (isStandUpActive) {
+            tsvscode.postMessage({
+                command: "alertStandUp",
+            });
         }
+        setTimeout(notifyStandUp, 3600000);
     }
 
-    notifyLookAway();
-    notifyStandUp();
+    setTimeout(notifyLookAway, 1200000);
+    setTimeout(notifyStandUp, 3600000);
 </script>
 
 <h1>Helth</h1>

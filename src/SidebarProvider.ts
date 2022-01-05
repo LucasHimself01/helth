@@ -20,19 +20,17 @@ export class SidebarProvider implements vscode.WebviewViewProvider {
         webviewView.webview.html = this._getHtmlForWebview(webviewView.webview);
 
         webviewView.webview.onDidReceiveMessage(async (data) => {
-            switch (data.type) {
-                case "onInfo": {
-                    if (!data.value) {
-                        return;
-                    }
-                    vscode.window.showInformationMessage(data.value);
+            switch (data.command) {
+                case "alertLookAway": {
+                    vscode.window.showInformationMessage(
+                        "Look away for 20 seconds"
+                    );
                     break;
                 }
-                case "onError": {
-                    if (!data.value) {
-                        return;
-                    }
-                    vscode.window.showErrorMessage(data.value);
+                case "alertStandUp": {
+                    vscode.window.showInformationMessage(
+                        "Get up and stretch for a lil bit ;)"
+                    );
                     break;
                 }
             }
