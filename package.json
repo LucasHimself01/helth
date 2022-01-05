@@ -3,6 +3,7 @@
     "displayName": "helth",
     "description": "i am become helth",
     "version": "0.0.1",
+    "publisher": "LucasPradoSilva",
     "engines": {
         "vscode": "^1.63.0"
     },
@@ -10,68 +11,31 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:helth.helloWorld",
-        "onCommand:helth.refresh",
-        "onCommand:helth.turnOnTwentyTwentyTwenty",
-        "onCommand:helth.turnOffTwentyTwentyTwenty",
-        "onCommand:helth.turnOnStandingReminder",
-        "onCommand:helth.turnOffStandingReminder",
         "onView:helth-sidebar"
     ],
     "main": "./dist/extension.js",
     "contributes": {
         "viewsContainers": {
             "activitybar": [
-              {
-                "id": "helth-sidebar-view",
-                "title": "Helth",
-                "icon": "media/helth.svg"
-              }
+                {
+                    "id": "helth-sidebar-view",
+                    "title": "Helth",
+                    "icon": "media/helth.svg"
+                }
             ]
-          },
-          "views": {
+        },
+        "views": {
             "helth-sidebar-view": [
-              {
-                "type": "webview",
-                "id": "helth-sidebar",
-                "name": "Helth",
-                "icon": "media/helth.svg",
-                "contextualTitle": "Helth"
-              }
+                {
+                    "type": "webview",
+                    "id": "helth-sidebar",
+                    "name": "Helth",
+                    "icon": "media/helth.svg",
+                    "contextualTitle": "Helth"
+                }
             ]
-          },
-        "commands": [
-            {
-                "command": "helth.helloWorld",
-                "title": "Hello World",
-                "category": "helth"
-            },
-            {
-                "command": "helth.refresh",
-                "title": "Refresh",
-                "category": "helth"
-            },
-            {
-                "command": "helth.turnOnTwentyTwentyTwenty",
-                "title": "Turn on 20/20/20",
-                "category": "helth"
-            },
-            {
-                "command": "helth.turnOffTwentyTwentyTwenty",
-                "title": "Turn off 20/20/20",
-                "category": "helth"
-            },
-            {
-                "command": "helth.turnOnStandingReminder",
-                "title": "Turn on Standing Reminder",
-                "category": "helth"
-            },
-            {
-                "command": "helth.turnOffStandingReminder",
-                "title": "Turn off Standing Reminder",
-                "category": "helth"
-            }
-        ]
+        },
+        "commands": []
     },
     "scripts": {
         "vscode:prepublish": "npm run package",
